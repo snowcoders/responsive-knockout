@@ -1,0 +1,32 @@
+{
+  "name": "responsive-knockout",
+  "version": "1.0.0",
+  "description": "Knockout component that measures itself to know when it's contents doesn't fit and it needs to apply a smaller css class",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snowcoders/responsive-knockout.git"
+  },
+  "author": "Ricky Patel <rickyp@snowcoders.com> (http://www.snowcoders.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/snowcoders/responsive-knockout/issues"
+  },
+  "homepage": "https://github.com/snowcoders/responsive-knockout#readme",
+  "main": "./src/index.js",
+  "scripts": {
+    "ts": "tsc -project ./src",
+    "test": "mocha ./build/**/*.test.js",
+    "all": "npm run ts && npm run test"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@types/mocha": "^2.2.35",
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "typescript": "^2.1.4"
+  },
+  "files": [
+    "dist"
+  ]
+}
