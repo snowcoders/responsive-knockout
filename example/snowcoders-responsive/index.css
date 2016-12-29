@@ -1,0 +1,7 @@
+.snowcoders-responsive {
+  overflow: hidden;
+  height: 100%;
+  width: 100%; }
+  .snowcoders-responsive > * {
+    height: 100%;
+    width: 100%; }

@@ -14,16 +14,26 @@
   "homepage": "https://github.com/snowcoders/responsive-knockout#readme",
   "main": "./src/index.js",
   "scripts": {
-    "ts": "tsc -project ./src",
+    "build": "npm run build-html && npm run build-css && npm run build-ts",
+    "build-html": "copyfiles -u 1 src/**/*.html build",
+    "build-css": "node-sass -o build src",
+    "build-ts": "tsc -project ./src",
     "test": "mocha ./build/**/*.test.js",
-    "all": "npm run ts && npm run test"
+    "all": "npm run build && npm run test"
   },
   "dependencies": {
+    "knockout": "^3.4.1",
+    "style-loader": "^0.13.1"
   },
   "devDependencies": {
+    "@types/knockout": "^3.4.38",
     "@types/mocha": "^2.2.35",
+    "@types/requirejs": "^2.1.28",
     "chai": "^3.5.0",
+    "copyfiles": "^1.0.0",
     "mocha": "^3.2.0",
+    "node-sass": "^4.1.1",
+    "requirejs": "^2.3.2",
     "typescript": "^2.1.4"
   },
   "files": [
