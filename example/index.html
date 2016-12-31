@@ -56,13 +56,13 @@
             });
         </script>
 <style>
-            .exampleTable > * > table > tr > td {
+            .exampleTable > * > table td {
                 min-width: 100px;
             }
-            .exampleTable > .medium > table > tr > td:nth-child(n+5) {
+            .exampleTable > .medium > table td:nth-child(n+5) {
                 display: none;
             }
-            .exampleTable > .small > table > tr > td:nth-child(n+2) {
+            .exampleTable > .small > table td:nth-child(n+2) {
                 display: none;
             }
         </style>
@@ -71,35 +71,37 @@
 <body>
     <div class="exampleTable" data-bind="component: { name: 'snowcoders-responsive', params: $data }">
         <table>
-            <tr>
-                <td>
-                    Cell 1
-                </td>
-                <td>
-                    Cell 2
-                </td>
-                <td>
-                    Cell 3
-                </td>
-                <td>
-                    Cell 4
-                </td>
-                <td>
-                    Cell 5
-                </td>
-                <td>
-                    Cell 6
-                </td>
-                <td>
-                    Cell 7
-                </td>
-                <td>
-                    Cell 8
-                </td>
-                <td>
-                    Cell 9
-                </td>
-            </tr>
+            <tbody>
+                <tr>
+                    <td>
+                        Cell 1
+                    </td>
+                    <td>
+                        Cell 2
+                    </td>
+                    <td>
+                        Cell 3
+                    </td>
+                    <td>
+                        Cell 4
+                    </td>
+                    <td>
+                        Cell 5
+                    </td>
+                    <td>
+                        Cell 6
+                    </td>
+                    <td>
+                        Cell 7
+                    </td>
+                    <td>
+                        Cell 8
+                    </td>
+                    <td>
+                        Cell 9
+                    </td>
+                </tr>
+            </tbody>
         </table>
     </div>
 </body>
