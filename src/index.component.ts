@@ -9,7 +9,7 @@ import * as indexVM from './index.viewModel';
 var indexHtml = require('text!./index.html');
 var indexCss = require('text!./index.css');
 
-let controlName = 'stocktrader-index';
+let controlName = 'snowcoders-responsive';
 
 // load the css for the component
 var link = document.createElement("style");
