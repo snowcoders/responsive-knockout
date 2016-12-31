@@ -19,7 +19,7 @@
     "build-css": "node-sass -o build src",
     "build-ts": "tsc -project ./src",
     "test": "mocha ./build/**/*.test.js",
-    "all": "npm run build && npm run test"
+    "all": "npm run build"
   },
   "dependencies": {
     "knockout": "^3.4.1",
