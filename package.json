@@ -18,6 +18,8 @@
     "build-html": "copyfiles -u 1 src/**/*.html build",
     "build-css": "node-sass -o build src",
     "build-ts": "tsc -project ./src",
+    "example-refresh": "copyfiles -u 1 build/index.css example/snowcoders-responsive && copyfiles -u 1 build/index.html example/snowcoders-responsive && copyfiles -u 1 build/index.viewModel.js example/snowcoders-responsive",
+    "example": "npm run build && npm run example-refresh",
     "test": "mocha ./build/**/*.test.js",
     "all": "npm run build"
   },

@@ -1,18 +1,18 @@
 import * as ko from 'knockout';
 
-export interface IResizableViewModelProps {
+export interface IResponsiveViewModelProps {
     nameOfComponent: string;
     sizeClasses: string[];
-    // Function provided to the caller so that if something changes (e.g. data) this resizable can be notified of the change
+    // Function provided to the caller so that if something changes (e.g. data) this Responsive can be notified of the change
     resize?: () => void;
 }
 
-export class ResizableViewModel {
-    private props: IResizableViewModelProps;
+export class ResponsiveViewModel {
+    private props: IResponsiveViewModelProps;
 
     private elementToMeasure: HTMLElement;
 
-    constructor(props: IResizableViewModelProps) {
+    constructor(props: IResponsiveViewModelProps) {
         this.props = props;
     }
 

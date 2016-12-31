@@ -1,5 +1,5 @@
 import * as mocha from "mocha";
-import {ResizableViewModel} from "./index.viewModel";
+import {ResponsiveViewModel} from "./index.viewModel";
 
 describe('Module', () => {
     it ("Verify output", () => {

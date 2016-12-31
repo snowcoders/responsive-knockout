@@ -43,13 +43,9 @@
                 }
             });
 
-            require(['jquery'], function ($){
-                alert('jquery loaded');
-            });
-
             require(['index.viewModel', "text!index.html", "text!index.css"], function (responsiveVM, responsiveHtml, responsiveCss) {
                 let controlName = 'snowcoders-responsive';
-                registerKOComponent(ko, controlName, responsiveVM.responsiveViewModel, responsiveHtml, responsiveCss);
+                registerKOComponent(ko, controlName, responsiveVM.ResponsiveViewModel, responsiveHtml, responsiveCss);
 
                 var props = {
                     nameOfComponent: 'example',

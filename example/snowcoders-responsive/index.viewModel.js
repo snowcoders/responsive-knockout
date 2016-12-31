@@ -1,10 +1,10 @@
 define(["require", "exports"], function (require, exports) {
     "use strict";
-    var ResizableViewModel = (function () {
-        function ResizableViewModel(props) {
+    var ResponsiveViewModel = (function () {
+        function ResponsiveViewModel(props) {
             this.props = props;
         }
-        ResizableViewModel.prototype.onAfterRender = function (elements) {
+        ResponsiveViewModel.prototype.onAfterRender = function (elements) {
             if (elements.length === 0) {
                 console.error(this.props.nameOfComponent + " - Cannot perform size measurements due to no child elements being rendered");
                 return;
@@ -14,7 +14,7 @@ define(["require", "exports"], function (require, exports) {
             window.addEventListener("resize", this.throttle(this.onResize.bind(this), 100));
             this.onResize();
         };
-        ResizableViewModel.prototype.onResize = function () {
+        ResponsiveViewModel.prototype.onResize = function () {
             if (this.elementToMeasure == null) {
                 return;
             }
@@ -29,7 +29,7 @@ define(["require", "exports"], function (require, exports) {
                 console.error(this.props.nameOfComponent + " - Smallest size is not small enough. { parentSize: " + this.elementToMeasure.offsetWidth + ", contentSize: " + this.elementToMeasure.scrollWidth + "}");
             }
         };
-        ResizableViewModel.prototype.throttle = function (fn, time) {
+        ResponsiveViewModel.prototype.throttle = function (fn, time) {
             if (time === void 0) { time = 50; }
             var timer = null;
             var throttledFn = function () {
@@ -42,8 +42,8 @@ define(["require", "exports"], function (require, exports) {
             };
             return throttledFn;
         };
-        return ResizableViewModel;
+        return ResponsiveViewModel;
     }());
-    exports.ResizableViewModel = ResizableViewModel;
+    exports.ResponsiveViewModel = ResponsiveViewModel;
 });
 //# sourceMappingURL=index.viewModel.js.map
