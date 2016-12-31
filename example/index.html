@@ -11,7 +11,7 @@
             }
         });
 
-        require(['index.component'], function () {
+        require(['knockout', 'index.component'], function (ko, component) {
             var props = {
                 nameOfComponent: 'example',
                 sizeClasses: ['', 'medium', 'small']
