@@ -2,7 +2,7 @@ define(["require", "exports", "knockout", "./index.viewModel", "text!./index.htm
     "use strict";
     var indexHtml = require('text!./index.html');
     var indexCss = require('text!./index.css');
-    var controlName = 'stocktrader-index';
+    var controlName = 'snowcoders-responsive';
     var link = document.createElement("style");
     link.type = "text/css";
     link.innerHTML = indexCss;
