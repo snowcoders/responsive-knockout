@@ -4,68 +4,33 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.1/knockout-min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.2/require.js"></script>
     <script>
-            function loadCss(content) {
-                var link = document.createElement("style");
-                link.type = "text/css";
-                link.innerHTML = content;
-                document.getElementsByTagName("head")[0].appendChild(link);
+        requirejs.config({
+            baseUrl: './snowcoders-responsive',
+            paths: {
+                "text": 'https://cdnjs.cloudflare.com/ajax/libs/require-text/2.0.12/text'
             }
-            function registerKOComponent(ko, controlName, viewModel, htmlTemplate, css) {
-                loadCss(css);
-                if (!ko.components.isRegistered(controlName)) {
-                    ko.components.register(controlName, {
-                        viewModel: {
-                            createViewModel: function (params, componentInfo) {
-                                if (componentInfo.element.classList) {
-                                    componentInfo.element.classList.add(controlName);
-                                }
-                                else {
-                                    componentInfo.element.className += ' ' + controlName;
-                                }
-                                if (viewModel != null) {
-                                    return new viewModel(params);
-                                }
-                                else {
-                                    return null;
-                                }
-                            }
-                        },
-                        template: htmlTemplate
-                    });
-                }
-            }
-        </script>
-        <script>
-            requirejs.config({
-                baseUrl: './snowcoders-responsive',
-                paths: {
-                    "text": 'https://cdnjs.cloudflare.com/ajax/libs/require-text/2.0.12/text'
-                }
-            });
+        });
 
-            require(['index.viewModel', "text!index.html", "text!index.css"], function (responsiveVM, responsiveHtml, responsiveCss) {
-                let controlName = 'snowcoders-responsive';
-                registerKOComponent(ko, controlName, responsiveVM.ResponsiveViewModel, responsiveHtml, responsiveCss);
+        require(['index.component'], function () {
+            var props = {
+                nameOfComponent: 'example',
+                sizeClasses: ['', 'medium', 'small']
+            };
 
-                var props = {
-                    nameOfComponent: 'example',
-                    sizeClasses: ['', 'medium', 'small']
-                };
-
-                ko.applyBindings(props);
-            });
-        </script>
-<style>
-            .exampleTable > * > table td {
-                min-width: 100px;
-            }
-            .exampleTable > .medium > table td:nth-child(n+5) {
-                display: none;
-            }
-            .exampleTable > .small > table td:nth-child(n+2) {
-                display: none;
-            }
-        </style>
+            ko.applyBindings(props);
+        });
+    </script>
+    <style>
+        .exampleTable > * > table td {
+            min-width: 100px;
+        }
+        .exampleTable > .medium > table td:nth-child(n+5) {
+            display: none;
+        }
+        .exampleTable > .small > table td:nth-child(n+2) {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
